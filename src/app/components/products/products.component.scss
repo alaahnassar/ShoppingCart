@@ -1,0 +1,19 @@
+.card {
+    transition: 0.3s ease-in-out;
+    img {
+        max-width: 150px;
+        height: 200px;
+        text-align: center
+    }
+    img:hover {
+        transition: 0.3s ease-in-out;
+        transform: scale(1.1);
+    }
+}
+
+.overLetter {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    // max-width: 100px;
+}

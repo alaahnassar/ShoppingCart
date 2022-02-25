@@ -1,0 +1,18 @@
+<div class=" container">
+    <div class="row my-3 ">
+        <div *ngFor="let item of prodctsList" class="d-flex my-3 col-xl-3 col-md-6 center justify-content-between">
+            <div class="py-2 px-1 card">
+                <img src="{{item.image}}" class="card-img-top mx-auto my-2" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title overLetter">{{item.title}}</h5>
+                    <h6>{{item.category}}</h6>
+                    <h6 class="overLetter">{{item.description}}</h6>
+                    <p> <strong>${{item.price}}</strong></p>
+                    <button class="btn btn-primary" (click)="addtoCart(item)"> Add To Cart</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
