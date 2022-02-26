@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/app/services/api.service';
 import { CartApiService } from 'src/app/services/cart-api.service';
 
@@ -9,7 +10,7 @@ import { CartApiService } from 'src/app/services/cart-api.service';
 })
 export class ProductsComponent implements OnInit {
   prodctsList:any
-  constructor(private Api:ApiService,private cartApi:CartApiService) { }
+  constructor(private Api:ApiService,private cartApi:CartApiService,private toastr:ToastrService ) { }
 
   ngOnInit(): void {
     this.Api.getproduct().subscribe(res=>{
@@ -22,9 +23,14 @@ export class ProductsComponent implements OnInit {
     )
   }
   addtoCart(item:any){
-   this.cartApi.addToCart(item)
+   this.cartApi.addToCart(item);
+   this.toastr.success('This item is added to cart');
+  }
+
   }
 
 
 
-}
+
+
+
